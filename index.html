@@ -19,10 +19,10 @@
             set fso = CreateObject("Scripting.FileSystemObject"); 
             set s   = fso.CreateTextFile("./filename.txt", True);
 
-            var firstName = document.getElementById('FirstName');
+            var firstName = document.getElementById('firstName');
             var lastName  = document.getElementById('lastName');
 
-            s.writeline("First Name :" + FirstName);
+            s.writeline("First Name :" + firstName);
             s.writeline("Last Name :" + lastName);
 
             s.writeline("-----------------------------");
