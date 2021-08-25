@@ -2,23 +2,32 @@
 <html>
   <head>
   </head>
-  <body>
-    <button id="create" onclick="createFile();">Create It</button>
-    <button id="delete">Delete It</button>
+  <body> 
+// HTML
+<form onSubmit="WriteToFile(this)">
+<label>Type your first name:</label>
+<input type="text" name="FirstName" id="firstName" size="20">
+ 
+<label>Type your last name: </abel>
+<input type="text" name="LastName" id="lastName" size="20">
+ 
+<input type="submit" value="submit">
+</form>
     <script type="text/javascript">
-         function createFile(){ //creates a file using the fileLIST list 
-            var output= 'Name \t Status\n'+ fileLIST[0][0].name+'\t'+fileLIST[0][1]+'\n';
-            var Previous = fileLIST[0];
-            for (var i=1; i<fileLIST.length; i++)
-                if (fileLIST[i][1] =='none' || fileLIST[i][1] == Previous[1])
-                    continue
-                else {
-                    Previous = fileLIST[i]
-                    output = output + fileLIST[i][0].name +'\t'+fileLIST[i][1] + '\n';}
+         function WriteToFile(passForm) {
+ 
+            set fso = CreateObject("Scripting.FileSystemObject"); 
+            set s   = fso.CreateTextFile("/filename.txt", True);
 
-            window.open("data:text/json;charset=utf-8," + escape(output));//should create file
-            display();  
-         }
+            var firstName = document.getElementById('FirstName');
+            var lastName  = document.getElementById('lastName');
+
+            s.writeline("First Name :" + FirstName);
+            s.writeline("Last Name :" + lastName);
+
+            s.writeline("-----------------------------");
+            s.Close();
+        }
     </script>
   </body>
 </html>
