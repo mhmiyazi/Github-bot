@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    <button id="create">Create It</button>
+    <button id="delete">Delete It</button>
+    <script type="text/javascript">
+         function createFile(){ //creates a file using the fileLIST list 
+            var output= 'Name \t Status\n'+ fileLIST[0][0].name+'\t'+fileLIST[0][1]+'\n';
+            var Previous = fileLIST[0];
+            for (var i=1; i<fileLIST.length; i++)
+                if (fileLIST[i][1] =='none' || fileLIST[i][1] == Previous[1])
+                    continue
+                else {
+                    Previous = fileLIST[i]
+                    output = output + fileLIST[i][0].name +'\t'+fileLIST[i][1] + '\n';}
+
+            window.open("data:text/json;charset=utf-8," + escape(output));//should create file
+            display();  
+         }
+    </script>
+  </body>
+</html>
