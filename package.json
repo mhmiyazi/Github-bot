@@ -1,0 +1,26 @@
+{
+  "name": "github-bot",
+  "version": "1.0.0",
+  "description": "Github bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhmiyazi/Github-bot.git"
+  },
+  "author": "MH Miyazi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhmiyazi/Github-bot/issues"
+  },
+  "homepage": "https://github.com/mhmiyazi/Github-bot#readme",
+  "dependencies": {
+    "jsonfile": "^6.1.0",
+    "moment": "^2.29.1",
+    "random": "^3.0.6",
+    "simple-git": "^2.44.0"
+  },
+  "devDependencies": {}
+}
