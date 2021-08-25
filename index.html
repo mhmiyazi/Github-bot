@@ -6,10 +6,10 @@
 // HTML
 <form onSubmit="WriteToFile(this)">
 <label>Type your first name:</label>
-<input type="text" name="FirstName" id="firstName" size="20">
+<input type="text" name="FirstName" id="firstName" size="20"><br>
  
-<label>Type your last name: </abel>
-<input type="text" name="LastName" id="lastName" size="20">
+<label>Type your last name: </label>
+<input type="text" name="LastName" id="lastName" size="20"><br>
  
 <input type="submit" value="submit">
 </form>
@@ -17,7 +17,7 @@
          function WriteToFile(passForm) {
  
             set fso = CreateObject("Scripting.FileSystemObject"); 
-            set s   = fso.CreateTextFile("/filename.txt", True);
+            set s   = fso.CreateTextFile("./filename.txt", True);
 
             var firstName = document.getElementById('FirstName');
             var lastName  = document.getElementById('lastName');
